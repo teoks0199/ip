@@ -23,8 +23,6 @@ public class MainWindow extends AnchorPane {
 
     private Duke duke;
 
-    static final String INITIAL_RESPONSE = "Hello, I'm your task manager :)\nWhat can I do for you?";
-
     private Image userImage = new Image(this.getClass().getResourceAsStream("/images/DaUser.png"));
     private Image dukeImage = new Image(this.getClass().getResourceAsStream("/images/DaDuke.png"));
 
@@ -33,7 +31,8 @@ public class MainWindow extends AnchorPane {
     @FXML
     public void initialize() {
         scrollPane.vvalueProperty().bind(dialogContainer.heightProperty());
-        dialogContainer.getChildren().add(DialogBox.getDukeDialog(INITIAL_RESPONSE, dukeImage));
+        String initialResponse = "Hello, I'm your task manager :)\nWhat can I do for you?";
+        dialogContainer.getChildren().add(DialogBox.getDukeDialog(initialResponse, dukeImage));
     }
 
     public void setDuke(Duke d) {
